@@ -28,6 +28,8 @@
 
     .logo img {
       height: 55px;
+      width: auto;
+      object-fit: contain;
     }
 
     nav a {
@@ -35,6 +37,10 @@
       color: #ddd;
       text-decoration: none;
       font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: #fff;
     }
 
     .cta-phone {
@@ -227,11 +233,16 @@
   </div>
 
   <div class="quote-grid">
-    <form class="quote-form">
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Email Address">
-      <input type="tel" placeholder="Phone Number">
-      <textarea placeholder="Describe the items you need removed..."></textarea>
+    <form class="quote-form" action="https://formspree.io/f/mbdkjnde" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <textarea name="message" placeholder="Describe the items you need removed..." required></textarea>
+
+      <input type="hidden" name="_subject" value="New Load & Go Quote Request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thank-you.html">
+
       <button type="submit">Request Free Quote</button>
     </form>
 
@@ -239,8 +250,7 @@
       <div class="quote-card">
         <h3>Contact Info</h3>
         <div class="contact-item">📞 (484) 630-0801</div>
-        <div class="contact-item">📧 info@loadandgo.com</div>
-        <div class="contact-item">📍 Greater Metro Area</div>
+        <div class="contact-item">📍 Local Junk Removal Service</div>
       </div>
 
       <div class="highlight-box">
